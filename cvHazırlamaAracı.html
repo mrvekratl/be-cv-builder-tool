@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>CV Hazýrlama Aracý</title>
+
+    <style>
+
+        * { /*Tüm HTML elemanlarýna uygulanacak genel bir CSS stili*/
+            margin: 0; /*Tarayýcýlar, çeþitli HTML elemanlarý için varsayýlan margin deðerleri tanýmlar. Bu, elemanlar arasýndaki boþluklarý kaldýrarak, daha tutarlý bir baþlangýç noktasý saðlar.*/
+            padding: 0; /*Margin için de aynýsý geçerlidir */
+            box-sizing: border-box; /*Box modelini deðiþtirir. border-box deðeri ile, bir elemanýn geniþliði ve yüksekliði hesaplanýrken, padding ve border deðerleri de dahil edilir. Bu, geniþlik ve yükseklik deðerlerinin elemanýn toplam boyutunu yansýtmasýný saðlar. Örneðin, bir div elemanýnýn geniþliði 200px, padding 20px ve border 10px olarak ayarlandýðýnda, bu ayarlarla elemanýn toplam geniþliði 200px olur (standart box modelinde 260px olurdu).*/
+        }
+
+        .header {
+            background-color: white;
+            text-align: center;
+            font-size: 30px;
+            padding: 15px;
+            width: 1800px;
+            border: 1px, solid, black;
+            
+            
+        }
+
+        .container {
+            display: flex;
+            height: fit-content;
+            width: 1800px;
+            border:2px, solid, black;
+        }
+
+        .content {
+            background-color: grey;
+            border: 2px, solid, black;
+            width:450px;
+        }
+
+        .style {
+            background-color: darkgray;
+            border: 1px, solid, black;
+            width: 450px;
+        }
+
+        .cv {
+            margin-left: 5px;
+            background-color: red;
+            border: 1px, solid, black;
+            display: flex;
+            width:900px;
+        }
+
+        .SolKolon{
+            margin-left:30px;
+            background-color:darkred;
+            width:300px;
+            height: 100%;
+            
+
+        }
+
+        .fotograf {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 25px;
+            border: 2px solid black;
+        }
+
+        .bilgiler{        
+            width: 275px;
+            height: 250px;
+            margin: 10px;
+        }
+
+        .baslik {
+            font-size: 25px;
+            border-bottom: black 3px solid;
+        }
+
+        .text{
+            
+            padding-top:20px;
+        }
+
+        .SagKolon{
+            width: 100%;
+        }
+
+        .isimkutusu {
+            width: 100%;
+            background-color: #383838;
+            height: 290px;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+            .isimkutusu .isim {
+                font-size: 50px;
+            }
+
+            .isimkutusu .unvan {
+                font-size: 30px;
+            }
+
+            .isimkutusu .cizgi {
+                border-bottom: white 3px solid;
+                width: 100px;
+                margin: auto;
+            }
+
+        .anabasliklar {
+            text-align: center;
+            font-size: 20px;
+            padding: 15px;
+            font-weight:bold;
+            
+        }       
+
+        .tusbasliklari {
+             font-weight:bold;
+             text-decoration:underline;
+             margin-left: 10px;
+             margin-top: 30px;
+        }
+
+        td {            
+            padding-bottom: 5px;
+            padding-left: 10px;
+            width:130px;
+        }
+
+
+        textarea{
+            height: 80px;
+            width:170px;
+        }
+
+        .style td {
+            width: 180px;
+        }
+
+
+        
+       
+    </style>
+
+
+</head>
+<body>
+    <div class="header">
+        <header><b>CV Hazýrlama Aracý</b></header>
+    </div>
+
+    <div class="container">
+        <div class="content" style="flex-grow : 1">
+            <div class="anabasliklar">Metin Ýçerikleri</div> <!--Sol kolon-->
+            <hr />
+
+            <div>
+                <div class="tusbasliklari">Ýsim Kutusu</div>
+                <br />
+
+                <table>
+
+                    <tr>
+                        <td>
+                            <label>Ad Soyad: </label>
+                        </td>
+                        <td>
+                            <input type="text" onkeyup="veriAl('adsoyad', 'cvadsoyad')" id="adsoyad" name="adsoyad" value="" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label>Unvan: </label></td>
+                        <td> <input type="text" onkeyup="veriAl('unvan','cvunvan')" id="unvan" name="unvan" value="" /></td>
+                    </tr>
+
+                </table>
+
+                <div class="tusbasliklari">Ýletiþim Bilgileri</div>
+                <br />
+
+                <table>
+                    <tr>
+                        <td>
+                            <label>Telefon:</label>
+                        </td>
+                        <td>
+                            <input type="text" onkeyup="veriAl('telefon', 'cvtelefon')" id="telefon" name="telefon" value="" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Mail:</label>
+                        </td>
+                        <td>
+                            <input type="text" onkeyup="veriAl('mail', 'cvmail')" id="mail" name="mail" value="" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Web:</label>
+                        </td>
+                        <td>
+                            <input type="text" onkeyup="veriAl('web', 'cvweb')" id="web" name="web" value="" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Adres:</label>
+                        </td>
+                        <td>
+                            <textarea id="adres" onkeyup="veriAl('adres', 'cvadres')"></textarea>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+                <div class="tusbasliklari">Eðitim Bilgileri</div>
+                <br />
+
+                <table>
+
+                    <tr>
+                        <td>
+                            <label>Açýklama: </label>
+                        </td>
+                        <td>
+                            <textarea id="egitim" onkeyup="veriAl('egitim', 'cvegitim')"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Okul Sayýsý: </label>
+                        </td>
+                        <td>
+                            <select onchange="secimAl(this.value,'okulsecimkutulari','cvokul','Okul')">
+                                <option value="">Seçiniz</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                </table>
+                <table id="okulsecimkutulari"></table>
+
+                <div class="tusbasliklari">Yetenekler</div>
+                <br />
+
+                <table>
+                    <tr>
+                        <td><label>Açýklama: </label></td>
+                        <td><textarea id="yetenek" onkeyup="veriAl('yetenek', 'cvyetenekler')"></textarea></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Yetenek Sayýsý: </label>
+                        </td>
+                        <td>
+                            <select onchange="secimAl(this.value,'yeteneksecimlerikutusu','cvyetenek','Yetenek')">
+                                <option value="">Seçiniz</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+
+                            </select>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <table id="yeteneksecimlerikutusu"></table>
+
+                <div class="tusbasliklari">Hakkýmda</div>
+                <br />
+
+                <table>
+                    <tr>
+                        <td><label>Açýklama: </label></td>
+                        <td><textarea id="hakkýmda" onkeyup="veriAl('hakkýmda', 'cvhakkýmda')"></textarea></td>
+                    </tr>
+                </table>
+
+                <div class="tusbasliklari">Ýþ Deneyimi</div>
+                <br />
+
+                <table>
+                    <tr>
+                        <td><label>Açýklama: </label></td>
+                        <td><textarea id="isdeneyimi" onkeyup="veriAl('isdeneyimi', 'cvisdeneyimi')"></textarea></td>
+                    </tr>
+                </table>
+
+
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+           
+
+        </div>
+
+        <div class="style" style="flex-grow: 1">
+            <!--Orta kolon-->
+
+            <div class="anabasliklar">Görünüþ</div>
+            <hr />
+            <div>
+                <div class="tusbasliklari">Renkler</div>
+                <br />
+
+                <table>
+                    <tr>
+                        <td <label>Arkaplan Rengi:</label></td>
+                        <td><input type="color" onchange="renkDegisim('arkaplanrenk','cv')" name="arkaplanrenk" id="arkaplanrenk" value="#FF0000" /></td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <td><label>Sol Kolon Rengi:</label></td>
+                        <td><input type="color" onchange="renkDegisim('solkolonrenk','SolKolon')" name="solkolonrenk" id="solkolonrenk" value="#8B0000" /></td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <td><label>Ýsim Kutusu Rengi:</label></td>
+                        <td><input type="color" onchange="renkDegisim('isimkutusurenk','isimkutusu')" name="isimkutusurenk" id="isimkutusurenk" value="#38240B" /></td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <td><label>Ýsim Kutusu Yazý Rengi:</label></td>
+                        <td><input type="color"onchange="yaziRenkDegisim('isimkutusuyazirenk','isimyazi')" name="isimkutusuyazirenk" id="isimkutusuyazirenk" value="#FFFFFF" /></td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div>
+                <div class="tusbasliklari">Yazý Tipi</div>
+                <br />
+
+                <table>
+                    <tr>
+                        <td><label>Yazý Tipi:</label></td>
+                        <td>
+                            <select onchange="yaziDeðisim(this.value, 'cv')">
+                                <option value="">Seçiniz</option>
+                                <option value="Times New Roman">Times New Roman</option>
+                                <option value="Courier New">Courier New</option>
+                                <option value="Lucida Handwriting">Lucida Handwriting</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <div class="tusbasliklari">Fotoðraf</div>
+                <br />
+                <table>
+                    <tr>
+                        <td><label>Fotoðraf Çerçevesi Þekli: </label></td>
+                        <td>
+                            <select id="cerceve" onchange="fotografCercevesi(this.value, 'fotograf')">
+                                <option value="">Seçiniz</option>
+                                <option value="1">Köþeli</option>
+                                <option value="2">Oval</option>
+                                <option value="3">Yuvarlak</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <div class="tusbasliklari">Baþlýk Altý Çizgileri</div>
+                <br />
+
+                <table>
+                    <tr>
+                        <td><label>Çizgi Rengi:</label></td>
+                        <td><input type="color" onchange="cizgiRenkDegisim('cizgirenk','baslik')"name="cizgirenk" id="cizgirenk" value="#000000" /></td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>                        
+                        <td><label>Çizgi Þekli: </label></td>
+                        <td>
+                            <select id="cizgisekli" onchange="cizgiSekli(this.value, 'baslik')">
+                                <option value="">Seçiniz</option>
+                                <option value="1">Noktalý</option>
+                                <option value="2">Çizgili</option>
+                                <option value="3">Düz</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="cv" style="flex-grow:2"> <!--Sað kolon-->
+            
+            <div class="SolKolon">
+
+                <div class="fotograf">FOTOÐRAF</div>
+
+                <div class="bilgiler">
+                    <div class="baslik">ÝLETÝÞÝM</div> <!--Ýletiþim Alaný-->
+                    <div class="text">
+                        <ul style="padding-left:50px">
+                            <li id="cvtelefon">{ Telefon }</li>
+                            <li id="cvmail">{ Mail }</li>
+                            <li id="cvadres">{ Adres }</li>
+                            <li id="cvweb">{ Web }</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <div class="bilgiler"> <!--Eðitim Alaný-->
+                    <div class="baslik">EÐÝTÝM</div>
+                    <div class="text" id="cvegitim">{ AÇIKLAMA }</div>
+                    <br />
+                    <div id="cvokul"></div>
+                </div>
+
+                <div class="bilgiler"> <!--Yetenekler Alaný-->
+                    <div class="baslik">YETENEKLER</div>
+                    <div class="text" id="cvyetenekler">{ AÇIKLAMA }</div>
+                    <br />
+                    <div id="cvyetenek"></div>
+                </div>
+
+            </div>
+
+            <div class="SagKolon">
+
+                <div class="isimkutusu">
+                    <div class="isim" id="cvadsoyad"> <p class="isimyazi">{ AD SOYAD }</p></div>
+                    <div class="cizgi"></div>
+                    <div class="unvan" id="cvunvan"><p class="isimyazi">{ UNVAN }</p></div>
+                </div>
+
+                <div class="bilgiler">
+                    <div class="baslik">HAKKIMDA</div>
+                    <div class="text" id="cvhakkýmda">{ AÇIKLAMA }</div>
+                </div>
+
+                <div class="bilgiler">
+                    <div class="baslik">ÝÞ DENEYÝMÝ</div>
+                    <div class="text" id="cvisdeneyimi">{ AÇIKLAMA }</div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        function veriAl(inputId, outputId) {
+            var input = document.getElementById(inputId).value;
+            document.getElementById(outputId).innerHTML = input;
+        }
+
+        function secimAl(secim, inputId, outputId, metin) {
+           
+            var input = document.getElementById(inputId);
+            var output = document.getElementById(outputId);
+
+            input.innerHTML = '';
+            output.innerHTML = '';
+
+            for (let i = 1; i <= secim; i++) {
+
+                // Metin içeriklerine label-input ekleme
+                const tr = document.createElement('tr');
+                tr.id = 'secimtr' + i; //yeni eklenmiþ satýrlara yeni id vermek içi "i" deðiþkeni de eklendi             
+                tr.innerHTML = //tr'nin içerisine html kodu yazýldý               
+                    `<td><label>${i}. ${metin}</label></td><td style="padding-left:100px"><input type="text"  onkeyup="veriAl('${i}.${metin}','dýsliste${i}')" id="${i}.${metin}" /></td ><td><input type="text" onkeyup="veriAl('${i}.${metin}2','icliste${i}')" id="${i}.${metin}2" placeholder="Açýklama" /></td >`
+                input.appendChild(tr);
+
+                //Cv penceresine liste ekleyip klavyeden gelen yazýyý çekme
+                const li = document.createElement('li');
+                li.id = 'secimli' + i; //yeni eklenen li' ye yeni bir id verildi
+                li.innerHTML = ` <span id="dýsliste${i}"><br/></span><ul style="padding-left:50px"><li id="icliste${i}"></li></ul>`
+                output.appendChild(li);
+
+            }
+        }
+
+        function renkDegisim(inputId, outputId) {
+            let input = document.getElementById(inputId);
+            let output = document.getElementsByClassName(outputId);            
+            
+            for (var i = 0; i < output.length; i++) {
+                output[i].style.backgroundColor = input.value;
+            }                                  
+
+        }
+
+        function yaziRenkDegisim(inputId, outputId) {
+            let input = document.getElementById(inputId);
+            let output = document.getElementsByClassName(outputId);
+
+            for (var i = 0; i < output.length; i++) {
+                output[i].style.color = input.value;
+            }
+
+        }
+
+        function cizgiRenkDegisim(inputId, outputId) {
+            let input = document.getElementById(inputId);
+            let output = document.getElementsByClassName(outputId);
+
+            for (var i = 0; i < output.length; i++) {
+                output[i].style.borderBottomColor = input.value;
+            }
+
+        }
+
+        function yaziDeðisim(inputId, outputId) {            
+            let output = document.getElementsByClassName(outputId)
+
+            for (var i = 0; i < output.length; i++) {
+                output[i].style.fontFamily = inputId;
+            }
+        }
+                  
+        function fotografCercevesi(input, output) {
+            input = document.getElementById('cerceve');
+            output = document.getElementsByClassName('fotograf');
+            let radius = '';
+
+            if (input.value == '1') { radius = '0%' }
+            else if (input.value == '2') { radius = '25%' }
+            else if (input.value == '3') { radius = '100%' }
+
+            for (var i = 0; i < output.length; i++) {
+                output[i].style.borderRadius = radius;
+            }
+
+        }
+
+        function cizgiSekli(input, output) {
+            input = document.getElementById('cizgisekli');
+            output = document.getElementsByClassName('baslik');
+            let radius = '';
+
+            if (input.value == '1') { radius = 'dotted' }
+            else if (input.value == '2') { radius = 'dashed' }
+            else if (input.value == '3') { radius = 'solid' }
+
+            for (var i = 0; i < output.length; i++) {
+                output[i].style.borderBottomStyle =  radius ;
+            }
+
+        }
+
+
+           
+
+
+
+       
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>
