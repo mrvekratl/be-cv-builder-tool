@@ -2,6 +2,9 @@
 
 This project is a dynamic CV builder tool created using HTML, CSS, and JavaScript. The purpose of the project is to generate a CV dynamically by allowing users to input personal information, skills, education, and other details. The changes are applied in real-time as the user interacts with the input fields.
 
+## Screenshot
+![Image Gallery Screenshot](images/screenshot.png)
+
 ## Project Purpose
 
 The goal of this project is to create a fully functional CV tool where:
